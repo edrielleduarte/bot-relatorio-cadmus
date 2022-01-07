@@ -1,0 +1,9 @@
+chromedriver-autoinstaller==0.3.1
+chromedriver-binary-auto==0.1.1
+dt==1.1.46
+openpyxl==3.0.9
+pandas==1.3.5
+pip-chill==1.0.1
+pyopenssl==21.0.0
+pyyaml==6.0
+selenium==4.1.0

@@ -1,0 +1,21 @@
+# Caso queira usar a data atual deixe em branco ou pode setar uma data.
+# {dia}/{mês}/{ano} Ex.: 02/01/2022
+setar_data:
+########################################################################################################################
+# Email de login
+email_envio:
+  - exemplo@gmail.com
+#  - exemplo@email.com
+# Email pra qual quer enviar
+email_destinatario:
+  - edrielleduarte@gmail.com
+
+# Aqui é a senha de login
+senha:
+  - sua senha
+
+# Tipo de email que deseja, gmail, outlook
+tipos_email:
+  - gmail
+#  - outlook
+#  - hotmail
