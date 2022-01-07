@@ -6,7 +6,7 @@ from selenium.webdriver.common.by import By
 
 from ChromeDriver.chromedrive import ChromeDriver
 from Cookie.cookie import Cookies
-from global_variaveis import variables, nome_vagas, localidade, descricao
+from global_variaveis import variaveis_dic, nome_vagas, localidade, descricao
 import configs.config
 from src.email.Email import enviar_email
 from src.etapas import scroll_pag, processo_extracao_dados, criacao_planilha_xlsx
@@ -37,15 +37,18 @@ def main():
         chrome_driver.get(url)
         sleep(10)
 
+        # Caso exista cookie
         aceite_cookie = Cookies(chrome_driver)
 
         sleep(2)
 
+        # Scroll da pagina
         scroll_pag(chrome_driver)
 
         sleep(10)
 
-        tabela_linha = chrome_driver.find_element(By.XPATH, variables['table'])
+        # Tabelas de divs pagina
+        tabela_linha = chrome_driver.find_element(By.XPATH, variaveis_dic['table'])
         primeira_linha = tabela_linha.find_elements(By.XPATH, './div')
 
         # # Processo de extração do for

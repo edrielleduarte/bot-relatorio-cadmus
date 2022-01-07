@@ -1,6 +1,6 @@
 import datetime as dt
 
-variables = {
+variaveis_dic = {
     'table': '/html/body/section[2]/div/div[2]/div/div',
     'btn_vagas': '//*[@id="pfolio"]/div[1]/div/p[2]/a',
     'text_descrition': '/html/body/section/div/div[2]/div[1]/div[1]/p',

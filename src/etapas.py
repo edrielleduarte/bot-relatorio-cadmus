@@ -8,7 +8,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as e_c
 
-from global_variaveis import variables
+from global_variaveis import variaveis_dic
 
 basicConfig(level=INFO)
 
@@ -23,7 +23,7 @@ def scroll_pag(chrome_driver):
 def processo_extracao_dados(chrome_driver, primeira_linha, nome_vagas, localidade, descricao):
     for i, linha in enumerate(primeira_linha, start=1):
         try:
-            tabela_linha = chrome_driver.find_element(By.XPATH, variables['table'])
+            tabela_linha = chrome_driver.find_element(By.XPATH, variaveis_dic['table'])
             primeira_linha = tabela_linha.find_element(By.XPATH, f'./div[{i}]')
             linhas_nomes_vagas = WebDriverWait(primeira_linha, 10).until(
                 e_c.presence_of_element_located((By.XPATH, './div/h3'))).text
@@ -36,8 +36,9 @@ def processo_extracao_dados(chrome_driver, primeira_linha, nome_vagas, localidad
             btn_vagas = primeira_linha.find_element(By.XPATH, './div/p[2]/a')
             chrome_driver.execute_script('arguments[0].click();', btn_vagas)
             sleep(3)
+            # Try/except pra caso não exista descrição.
             try:
-                descricoes = chrome_driver.find_element(By.XPATH, variables['text_descrition']).text
+                descricoes = chrome_driver.find_element(By.XPATH, variaveis_dic['text_descrition']).text
                 print(descricoes)
                 descricao.append(descricoes)
             except:
