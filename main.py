@@ -64,7 +64,7 @@ def main():
         exception('Erro no projeto')
 
     finally:
-
+        chrome_driver.close()
         sleep(2)
     fim = time.time()
     print(fim - inicio)

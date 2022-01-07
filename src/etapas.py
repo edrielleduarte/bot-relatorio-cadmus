@@ -38,6 +38,7 @@ def processo_extracao_dados(chrome_driver, primeira_linha, nome_vagas, localidad
             sleep(3)
             try:
                 descricoes = chrome_driver.find_element(By.XPATH, variables['text_descrition']).text
+                print(descricoes)
                 descricao.append(descricoes)
             except:
                 print('Valor do documento vazio')
